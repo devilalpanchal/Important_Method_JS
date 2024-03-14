@@ -8,6 +8,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="index.js"></script>
+    <script >
+
+
+
+////// For get current location and go to other location
+
+
+alert(location.href); 
+if (confirm("Go to GithubProfile of Devid")) {
+  location.href = "https://github.com/devilalpanchal"; // redirect the browser to another URL
+}
+
+
+// how to find Missing value like any where Alfhabet OR in number
+
+// function findNumber(arr) {
+//   var n = arr.length;
+//   var total = ((n + 2) * (n + 1)) / 2;
+//   for (let i = 0; i < n; i++) {
+//     total -= arr[i];
+//   }
+//   return total;
+// }
+
+// var arr = [a,b,c,d,f];
+// console.log(findNumber(arr));
+
+function findMissingLetter(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i].charCodeAt() + 1 !== arr[i + 1].charCodeAt()) {
+      return String.fromCharCode(arr[i].charCodeAt() + 1);
+    }
+  }
+  return undefined;
+}
+console.log(findMissingLetter(['a','c','d']));  // b
+
+
+// check height currenty page
+alert(window.innerHeight)
+
+
+
+
+    </script>
 </body>
 </html>
