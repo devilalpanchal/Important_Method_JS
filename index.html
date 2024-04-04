@@ -34,6 +34,19 @@
 //   return total;
 // }
 
+// 03 to back and forward method in it id condition that you have multiple page in your website
+history.back()
+history.forward()
+
+
+// to take current time zone
+const timeZ = document.querySelector(".timeZ");
+const timesone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(timesone);
+timeZ.innerHTML = timesone;
+
+
+
 // var arr = [a,b,c,d,f];
 // console.log(findNumber(arr));
 
