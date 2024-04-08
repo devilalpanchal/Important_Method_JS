@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #btn{
+            padding: 10px;
+        }
+    </style>
+    <input class="input" type="text">
+  <body>
+
+    <button id="btn">
+IP Adress
+    </button>
+    <script>
+      async function fetchDetails() {
+        try {
+          let url1 = "https://jsonip.com";
+          let response = await fetch(url1);
+          let data1 = await response.json();
+          let url2 = `https://ipapi.co/data1.ip/json`;
+          let response1 = await fetch(url2);
+          const ipAdress2 = data1.ip
+          console.log(ipAdress2);
+          let data = await response1.json();
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      fetchDetails();
+// let 
+let input    = document.querySelector('.input')
+      let btn = document.getElementById('btn').addEventListener('click',()=>{
+async function fetchDetails() {
+        try {
+            let value
+          let url1 = "https://jsonip.com";
+          let response = await fetch(url1);
+          let data1 = await response.json();
+          let url2 = `https://ipapi.co/data1.ip/json`;
+          let response1 = await fetch(url2);
+          const ipAdress2 = data1.ip
+          let input   = document.querySelector('.input').value = ipAdress2
+          console.log(ipAdress2);
+          let data = await response1.json();
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      fetchDetails();
+
+      })
+    </script>
+  </body>
+</html>
