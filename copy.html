@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy Element</title>
+<style>
+    /* Some basic styling for demonstration */
+    .copyable {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<!-- Example elements to copy -->
+<div class="copyable" onclick="copyElementText(this)">Click to copy this element</div>
+<div class="copyable" onclick="copyElementText(this)">Another element to copy</div>
+
+<script>
+function copyElementText(element) {
+    // Create a temporary textarea element
+    var tempTextArea = document.createElement("textarea");
+    // Set the value of the textarea to the inner text of the element
+    tempTextArea.value = element.innerText;
+    // Append the textarea to the body
+    document.body.appendChild(tempTextArea);
+    // Select the textarea
+    tempTextArea.select();
+    // Execute the copy command
+    document.execCommand("copy");
+    // Remove the textarea
+    document.body.removeChild(tempTextArea);
+    // Optionally, provide some visual feedback
+    element.style.backgroundColor = "#ffff99";
+    setTimeout(function() {
+        element.style.backgroundColor = "";
+    }, 1000); // Reset background color after 1 second
+}
+</script>
+
+</body>
+</html>
